@@ -5,6 +5,7 @@ local area_darkness_level = "dusk"
 local boss_bar = require"scripts/hud/boss_bar"
 
 map:register_event("on_started", function()
+  area_darkness_level = game:get_value"central_yarnham_area_darkness_level" or "dusk"
   light_fx = require"scripts/fx/lighting_effects"
   light_fx:set_darkness_level(area_darkness_level)
   sol.menu.start(map, light_fx)
@@ -86,6 +87,15 @@ function eileen_path_sensor:on_activated()
   eileen_path_hider:remove()
 end
 
+function eileen:on_interaction()
+  if not game:get_value"quest_eileen" then
+    game:start_dialog("_npcs.eileen.1", function() hero:start_treasure("blood_vial", 3) end)
+    game:set_value("quest_eileen", 0)
+  else
+    game:start_dialog"_npcs.eileen.2"
+  end
+end
+
 
 
 
@@ -140,5 +150,6 @@ gascoigne:register_event("on_dying", function()
       oedon_tomb_lantern:sparkle_effect()
     end)
   end)
+  game:set_value("central_yarnham_area_darkness_level", "night")
 end)
 

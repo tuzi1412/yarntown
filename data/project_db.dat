@@ -92,6 +92,7 @@ sprite{ id = "menus/options_cursor", description = "Options cursor" }
 sprite{ id = "menus/solarus_logo", description = "Solarus logo" }
 sprite{ id = "menus/team_logo", description = "Solarus Team logo" }
 sprite{ id = "npc/doll", description = "Doll" }
+sprite{ id = "npc/eileen", description = "Eileen" }
 sprite{ id = "npc/max", description = "Max" }
 sprite{ id = "npc/messenger", description = "messenger" }
 sprite{ id = "shadows/shadow_big", description = "Big shadow" }
@@ -266,6 +267,7 @@ entity{ id = "lantern", description = "Lantern" }
 entity{ id = "lost_echoes", description = "Lost Echoes" }
 
 language{ id = "en", description = "English" }
+language{ id = "es", description = "Espanol" }
 
 font{ id = "8_bit", description = "8 bit" }
 font{ id = "enter_command", description = "Enter Command" }
@@ -281,6 +283,7 @@ file{ path = "items/money_bag.lua", author = "Christopho", license = "GPL v3" }
 file{ path = "items/sword.lua", author = "Christopho", license = "GPL v3" }
 file{ path = "items/tunic.lua", author = "Christopho", license = "GPL v3" }
 file{ path = "languages/en/text/strings.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "languages/es", author = "amirtorrez", }
 file{ path = "main.lua", author = "Christopho", license = "GPL v3" }
 file{ path = "scripts/features.lua", author = "Christopho", license = "GPL v3" }
 file{ path = "scripts/game_manager.lua", author = "Christopho", license = "GPL v3" }

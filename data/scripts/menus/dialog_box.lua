@@ -59,7 +59,7 @@ local function initialize_dialog_box_features(game)
     fast = 20  -- Default.
   }
   local letter_sound_delay = 100
-  local box_width = 220
+  local box_width = 288
   local box_height = 60
 
   -- Initialize dialog box data.
@@ -193,7 +193,7 @@ local function initialize_dialog_box_features(game)
 
     -- Set the coordinates of graphic objects.
     local screen_width, screen_height = sol.video.get_quest_size()
-    local x = screen_width / 2 - 110
+    local x = screen_width / 2 - box_width / 2
     local y = top and 16 or (screen_height - 68)
 
     if self.style == "empty" then
@@ -525,6 +525,14 @@ local function initialize_dialog_box_features(game)
 
     -- Don't propagate the event to anything below the dialog box.
     return true
+  end
+
+  function dialog_box:on_joypad_hat_moved(hat, command)
+    if command == 6 then
+      dialog_box:on_command_pressed("down")
+    elseif command == 2 then
+      dialog_box:on_command_pressed("up")
+    end
   end
 
   -- Draws the dialog box.
